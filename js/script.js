@@ -53,10 +53,12 @@ const { createApp } = Vue
         },
         autoplaySlider(){
             
-            const play = setInterval(this.next,1000);
+            this.play = setInterval(this.next,1000);
 
-            //clearInterval(play)
-
+        },
+        stopSlider(){
+            
+            clearInterval(this.play);
         }
     }
    

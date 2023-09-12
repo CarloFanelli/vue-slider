@@ -17,7 +17,7 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img v-bind:src="slides[activeImage].image" alt="">
+                    <img v-bind:src="slides[activeImage].image" alt="" @mouseover.once="autoplaySlider()" @mouseout="stopSlider()">
                     <div class="text">
                         <h3>{{slides[activeImage].title}}</h3>
                         <p>
@@ -33,11 +33,10 @@
                     <div class="next" @click="next() ">
 						<i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div v-for="(image,index) in slides" :class="[index === activeImage ? 'active' : '']" class="thumb" @mousehover="stopSlider()">
+                    <div v-for="(image,index) in slides" :class="[index === activeImage ? 'active' : '']" class="thumb">
                         <img v-bind:src="slides[index].image" alt="" @click="showImg(index)" :key="index">
                     </div>
                 </div>
-                <button @click.once="autoplaySlider()">autoplay</button>
 
             </div>
         </div>
