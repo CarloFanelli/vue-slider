@@ -33,10 +33,11 @@
                     <div class="next" @click="next() ">
 						<i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div v-for="(image,index) in slides" :class="[index === activeImage ? 'active' : '']" class="thumb" >
+                    <div v-for="(image,index) in slides" :class="[index === activeImage ? 'active' : '']" class="thumb" @mousehover="stopSlider()">
                         <img v-bind:src="slides[index].image" alt="" @click="showImg(index)" :key="index">
                     </div>
                 </div>
+                <button @click.once="autoplaySlider()">autoplay</button>
 
             </div>
         </div>
