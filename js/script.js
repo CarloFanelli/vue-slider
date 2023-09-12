@@ -50,6 +50,11 @@ const { createApp } = Vue
         },
         showImg(index){
             this.activeImage = index;
+        },
+        autoplaySlider(){
+            setInterval(this.next,3000);
+            
+            
         }
     }
    

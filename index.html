@@ -30,7 +30,7 @@
                     <div class="prev" @click="prev()">
 						<i class="fa-solid fa-chevron-up"></i>
                     </div>
-                    <div class="next" @click="next()">
+                    <div class="next" @click="next() ">
 						<i class="fa-solid fa-chevron-down"></i>
                     </div>
                     <div v-for="(image,index) in slides" :class="[index === activeImage ? 'active' : '']" class="thumb" >
