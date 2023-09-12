@@ -47,6 +47,9 @@ const { createApp } = Vue
                 this.activeImage = this.slides.length - 1;
                 
             }
+        },
+        showImg(index){
+            this.activeImage = index;
         }
     }
    
